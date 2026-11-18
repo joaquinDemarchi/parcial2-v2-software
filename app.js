@@ -1,6 +1,8 @@
 const formulario = document.getElementById('form-tarea');
 const entrada = document.getElementById('input-tarea');
 const lista = document.getElementById('lista-tareas');
+const contadorPendientes = document.getElementById('contador-pendientes');
+const botonLimpiar = document.getElementById('boton-limpiar');
 
 let tareas = [
   { texto: 'Revisar el stock de insumos', completada: false },
@@ -27,6 +29,8 @@ function mostrarTareas() {
 
     lista.appendChild(item);
   });
+
+    actualizarResumen();
 }
 
 formulario.addEventListener('submit', (evento) => {
@@ -39,6 +43,16 @@ formulario.addEventListener('submit', (evento) => {
 
   tareas.push({ texto: texto, completada: false });
   entrada.value = '';
+  mostrarTareas();
+});
+
+function actualizarResumen() {
+  const pendientes = tareas.filter((tarea) => !tarea.completada).length;
+  contadorPendientes.textContent = pendientes;
+}
+
+botonLimpiar.addEventListener('click', () => {
+  tareas = tareas.filter((tarea) => !tarea.completada);
   mostrarTareas();
 });
 
