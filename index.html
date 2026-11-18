@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor de Tareas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Gestor de Tareas</h1>
+  </header>
+
+  <main>
+    <section id="bienvenida">
+      <h2>¡Bienvenido!</h2>
+      <p>Organizá tus pendientes: agregá tareas y hacé clic sobre una para marcarla como completada.</p>
+    </section>
+
+    <section id="tareas">
+      <h2>Mis tareas</h2>
+      <form id="form-tarea">
+        <input type="text" id="input-tarea" placeholder="Escribí una tarea nueva">
+        <button type="submit">Agregar</button>
+      </form>
+      <ul id="lista-tareas"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
